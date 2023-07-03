@@ -1,16 +1,20 @@
 import Vue from "vue"
 import Router from "vue-router"
-// import Login from "@/view/login/index"
 
 Vue.use(Router)
 const routes = [
-  // { 
-    // path: '/', 
-    // component: () =>import('@/view/login/index')
-  // },
+  { 
+    path: '/', 
+    name:'login',
+    component: () =>import('@/view/login/index')
+  },
 //   { path: '/bar', component: Bar }
 ]
 
 export default new Router({
-  routes 
+  routes ,
+  mode: 'hash',
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
