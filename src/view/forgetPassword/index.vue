@@ -1,25 +1,19 @@
 <template>
     <div>
         <div class="content_register" v-show="showContent == 'toRegister'">
-            <p class="content_top">注册</p>
+            <p class="content_top">忘记密码</p>
             <a-input placeholder="请输入手机号" v-model="telNumber" style="margin-bottom:30px"></a-input>
             <a-input placeholder="请输入验证码" v-model="code" style="margin-bottom:30px">
                 <a-tooltip slot="suffix" title="发送验证码">
                     <a-button >发送验证码</a-button>
                 </a-tooltip>
             </a-input>
-            <a-input-password placeholder="请设置密码，不少于6位数" v-model="passWord" :visibilityToggle="false" style="margin-bottom:20px"></a-input-password>
-            <a-radio size="small" style="margin-bottom:10px" :value="value" @change="onChange">
-                同意指点地球村
-                <a-button type="link" @click="userAgreement">用户协议</a-button>和
-                <a-button type="link" @click="userAgreement">隐私政策</a-button>
-            </a-radio>
-            <a-button type="primary" style="margin-bottom:19px" @click="nextStep">下一步</a-button>
+            <a-input-password placeholder="请设置新密码，不少于6位数" v-model="passWord" :visibilityToggle="false" style="margin-bottom:60px"></a-input-password>
+            <a-button type="primary" style="margin-bottom:15px" @click="toLogin">确认</a-button>
             <div class="content_foot">
                 <p>已有账号，<a-button type="link" @click="toLogin">立即登录</a-button></p>
             </div>
         </div>
-        <Authentication v-show="showContent=='toAuthentication'" @toRegister='toRegister'/>
     </div>
 </template>
 <script>
@@ -39,25 +33,8 @@ import Authentication from '../authentication/index.vue'
             }
         },
         methods:{
-            toRegister(event){
-                this.showContent = event
-            },
             toLogin(){
                 this.$emit('toLogin',this.login)
-            },
-            userAgreement(){
-                // const h = this.$createElement;
-                this.$warning({
-                    title: '用户协议/隐私政策',
-                    content:'用户协议用户协议用户协议用户协议用户协议用户协议',
-                });
-            },
-            onChange(e) {
-                this.value = 'false'
-                console.log('radio checked', e.target.value);
-            },
-            nextStep(){
-                this.showContent='toAuthentication'
             },
             forgetPassword(){
                 console.log('忘记密码')

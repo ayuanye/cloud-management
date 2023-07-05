@@ -13,12 +13,12 @@ module.exports = defineConfig({
   lintOnSave: false,
   transpileDependencies: true,
   chainWebpack: (config) => {
-    config.resolve.alias
-      .set('vue$', 'vue/dist/vue.esm.js')
-      .set('@', resolve('src'))
-      .set('styles', resolve('src/assets/styles'))
-      .set('common', resolve('src/common'))
-      .set('static', resolve('static'))
+    // config.resolve.alias
+      // .set('vue$', 'vue/dist/vue.esm.js')
+      // .set('@', resolve('src'))
+      // .set('styles', resolve('src/assets/styles'))
+      // .set('common', resolve('src/common'))
+      // .set('static', resolve('static'))
   }
   // chainWebpack(config) {
   //   //新增 低版本兼容问题

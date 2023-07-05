@@ -23,16 +23,19 @@
             <a-button type="primary">登录</a-button>
         </div>
         <Uegister v-show="showContent == 'toRegister'" @toLogin='toLoginss'></Uegister>
+        <ForgetPassword v-show="showContent == 'toForgetPassword'" @toLogin='toLoginss'/>
     </div>
 </template>
 <script>
 import { UserOutlined } from '@ant-design/icons-vue';
 // import { defineComponent} from 'vue';
 import Uegister from '../register/index.vue'
+import ForgetPassword from '../forgetPassword/index.vue'
     export default {
         components: {
             UserOutlined,
-            Uegister
+            Uegister,
+            ForgetPassword
         },
         data() {
             return {
