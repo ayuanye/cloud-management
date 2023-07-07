@@ -1,5 +1,6 @@
 import Vue from "vue"
 import Router from "vue-router"
+import Sider from '../components/Sider/index.vue'
 
 Vue.use(Router)
 const routes = [
@@ -8,7 +9,19 @@ const routes = [
     name:'login',
     component: () =>import('@/view/login/index')
   },
-//   { path: '/bar', component: Bar }
+  {
+    path:'/view',
+    name:'Main',
+    component:Sider,
+    children:[
+      { 
+        path: '/chatWindow', 
+        name:'chatWindow',
+        component: () =>import('@/view/chatWindow') 
+      }
+    ]
+  }
+  
 ]
 
 export default new Router({

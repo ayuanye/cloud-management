@@ -20,7 +20,7 @@
                 <a-button type="link" @click="register">注册</a-button>
                 <a-button type="link" @click="forgetPassword">忘记密码?</a-button>
             </div>
-            <a-button type="primary">登录</a-button>
+            <a-button type="primary" @click="welcomeHome">登录</a-button>
         </div>
         <Uegister v-show="showContent == 'toRegister'" @toLogin='toLoginss'></Uegister>
         <ForgetPassword v-show="showContent == 'toForgetPassword'" @toLogin='toLoginss'/>
@@ -57,6 +57,11 @@ import ForgetPassword from '../forgetPassword/index.vue'
             forgetPassword(){
                 this.showContent="toForgetPassword"
                 console.log('忘记密码')
+            },
+            welcomeHome(){
+                this.$router.push({
+                    path:'/chatWindow',
+                })
             }
         }
     }
