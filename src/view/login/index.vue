@@ -5,7 +5,7 @@
                 style="width:470px;height:335px;margin-right:103px"/>
         </div>
         <div class="content_login" v-show="showContent == 'toLogin'">
-            <p class="content_top">欢迎使用云管理</p>
+            <p class="content_top" style="margin-bottom:60px">欢迎使用云管理</p>
             <a-input placeholder="请输入账号" v-model="userName" style="margin-bottom:30px">
                 <template #prefix>
                     <a-icon type="user" :style="{fontSize:'20px'}"/>
@@ -104,7 +104,7 @@ import ForgetPassword from '../forgetPassword/index.vue'
         left:20px
     }
     .content_login .content_text{
-        margin-bottom: 94px;
+        margin-bottom: 84px;
         display: flex;
         justify-content: space-between;
     }

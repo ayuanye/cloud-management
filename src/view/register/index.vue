@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="content_register" v-show="showContent == 'toRegister'">
-            <p class="content_top">注册</p>
+            <p class="content_top" style="margin-bottom:30px">注册</p>
             <a-input placeholder="请输入手机号" v-model="telNumber" style="margin-bottom:30px"></a-input>
             <a-input placeholder="请输入验证码" v-model="code" style="margin-bottom:30px">
                 <a-tooltip slot="suffix" title="发送验证码">
